@@ -21,6 +21,8 @@ function FSWebcam( options ) {
 
     scope.opts = Utils.setDefaults( options, FSWebcam.Defaults );
 
+    scope.opts.rotate = '180';
+
     Webcam.call( scope, scope.opts );
 
 }
@@ -59,12 +61,15 @@ FSWebcam.prototype.generateSh = function( location ) {
         ? "-d " + scope.opts.device
         : "";
 
+    var rotate = scope.opts.rotate ? "--rotate " + scope.opts.rotate : "";
+
     var sh = scope.bin + " "
         + resolution + " "
         + output + " "
         + quality + " "
         + delay + " "
         + device + " "
+        + rotate + " "
         + location;
 
     return sh;
