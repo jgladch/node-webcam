@@ -22,7 +22,7 @@ function FSWebcam( options ) {
     scope.opts = Utils.setDefaults( options, FSWebcam.Defaults );
 
     scope.opts.rotate = '180';
-    scope.opts.set = 'Saturation:20%';
+    scope.opts.set = 'Saturation:12%';
 
     Webcam.call( scope, scope.opts );
 
